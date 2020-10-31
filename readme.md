@@ -3,7 +3,7 @@
 ## Requisitos
 
 - Node
-- [Backend do Projeto]https://github.com/paulopatine/pi-reno-6-periodo-backend
+- [Backend do Projeto](https://github.com/paulopatine/pi-reno-6-periodo-backend)
 
 ## Instalação
 
