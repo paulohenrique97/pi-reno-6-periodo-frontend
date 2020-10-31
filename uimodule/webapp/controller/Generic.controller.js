@@ -3,8 +3,10 @@ sap.ui.define(
     "br/com/paulopatine/integratorProject/controller/BaseController",
     "br/com/paulopatine/integratorProject/model/formatter",
     "sap/ui/core/BusyIndicator",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
   ],
-  function (Controller, Formatter, BusyIndicator) {
+  function (Controller, Formatter, BusyIndicator, Filter, FilterOperator) {
     "use strict";
 
     return Controller.extend(
@@ -12,9 +14,17 @@ sap.ui.define(
       {
         formatter: Formatter,
 
-        constructor: function (cModel, oQuery = undefined) {
+        constructor: function (
+          cModel,
+          oQuery = undefined,
+          oSearch = undefined
+        ) {
           this.cModel = cModel;
-          this.oQuery = oQuery;
+          this.oQuery = oQuery || {};
+          this.oSearch = oSearch || {
+            listId: "list",
+            fields: ["codigo"],
+          };
         },
 
         onInit: function () {
@@ -30,6 +40,22 @@ sap.ui.define(
               oView.setModel(oData);
             },
           });
+        },
+
+        onListSearch: function (oEvent) {
+          let aFilters = [],
+            sQuery = oEvent.getSource().getValue(),
+            oSearch = this.oSearch,
+            oList = this.byId(oSearch.listId),
+            oBinding = oList.getBinding("items"),
+            aFinalFilters;
+
+          for (const field of oSearch.fields) {
+            let filter = new Filter(field, FilterOperator.Contains, sQuery);
+            aFilters.push(filter);
+          }
+          aFinalFilters = new Filter(aFilters);
+          oBinding.filter(aFinalFilters, "Application");
         },
       }
     );

@@ -6,7 +6,12 @@
 			<Button icon="sap-icon://action-settings" press="onConfigButtonPress"/>
 		</headerContent>
 		<content>
-			<List class="sapUiContentPadding" items="{/rows}">
+			<List id="list" class="sapUiContentPadding" items="{/rows}">
+				<headerToolbar>
+					<Toolbar >
+						<SearchField liveChange="onListSearch" search="onListSearch"></SearchField>
+					</Toolbar>
+				</headerToolbar>
 				<items>
 					<ObjectListItem title="{nome}" number="{valor}" numberUnit="R$">
 						<firstStatus>

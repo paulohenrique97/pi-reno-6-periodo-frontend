@@ -10,7 +10,11 @@ sap.ui.define(
       "br.com.paulopatine.integratorProject.controller.Vendas",
       {
         constructor: function () {
-          Controller.call(this, Venda);
+          let oSearch = {
+            listId: "list",
+            fields: ["codigo", "emissao", "nomeVendedor", "nomeCliente"],
+          };
+          Controller.call(this, Venda, undefined, oSearch);
         },
         onItemPress: function (oEvent) {
           let oVenda = oEvent.getSource().getBindingContext().getObject();

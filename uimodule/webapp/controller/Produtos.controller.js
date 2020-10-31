@@ -10,7 +10,11 @@ sap.ui.define(
       "br.com.paulopatine.integratorProject.controller.Produtos",
       {
         constructor: function () {
-          Controller.call(this, Produto);
+          let oSearch = {
+            listId: "list",
+            fields: ["codigo", "nome", "medida"],
+          };
+          Controller.call(this, Produto, undefined, oSearch);
         },
       }
     );

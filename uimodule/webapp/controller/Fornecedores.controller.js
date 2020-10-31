@@ -10,7 +10,21 @@ sap.ui.define(
       "br.com.paulopatine.integratorProject.controller.Fornecedores",
       {
         constructor: function () {
-          Controller.call(this, Fornecedor);
+          let oSearch = {
+            listId: "list",
+            fields: [
+              "codigo",
+              "nome",
+              "endereco",
+              "cep",
+              "numero",
+              "estado",
+              "telefone",
+              "razao",
+              "cnpf",
+            ],
+          };
+          Controller.call(this, Fornecedor, undefined, oSearch);
         },
       }
     );
