@@ -2,17 +2,17 @@
 
 ## Requisitos
 
-Node
-[Backend do Projeto]https://github.com/paulopatine/pi-reno-6-periodo-backend
+- Node
+- [Backend do Projeto]https://github.com/paulopatine/pi-reno-6-periodo-backend
 
 ## Instalação
 
-Clone o Repositório
-No cmd rode o comando "npm install"
+- Clone o Repositório
+- No cmd rode o comando "npm install"
 
 ## Rodar
 
-No cmd rode o comando "npm run start"
+- No cmd rode o comando "npm run start"
 
 ## Credits
 
