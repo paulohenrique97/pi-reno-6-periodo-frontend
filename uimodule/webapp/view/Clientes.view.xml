@@ -1,0 +1,23 @@
+<mvc:View controllerName="br.com.paulopatine.integratorProject.controller.Clientes" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page id="page" title="{i18n>clientesTitle}" showNavButton="true" navButtonPress="onNavBack">
+		<headerContent>
+			<Button icon="sap-icon://action-settings" press="onConfigButtonPress"/>
+		</headerContent>
+		<content>
+			<List class="sapUiContentPadding" items="{/rows}">
+				<items>
+					<ObjectListItem title="{nome}" number="{endereco}" numberUnit="{estado}">
+						<firstStatus >
+							<ObjectStatus icon="sap-icon://calendar" text="{
+								path: 'data',
+								formatter: '.formatter.dataVenda'
+							}"/>
+						</firstStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

@@ -5,7 +5,7 @@ sap.ui.getCore().attachInit(function () {
   "use strict";
 
   sap.ui.require(
-    ["br/com/paulopatine/integratorProject/test/integration/AllJourneys"],
+    ["br/com/paulopatine/integratorProject/test/unit/AllTests"],
     function () {
       QUnit.start();
     }

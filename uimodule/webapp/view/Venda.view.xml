@@ -1,0 +1,33 @@
+<mvc:View xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form" controllerName="br.com.paulopatine.integratorProject.controller.Venda" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page id="page" title="{i18n>vendaTitle}" showNavButton="true" navButtonPress="onNavBack">
+		<headerContent>
+			<Button icon="sap-icon://action-settings" press="onConfigButtonPress"/>
+		</headerContent>
+		<content>
+			<ObjectHeader intro="{i18n>idVenda}" title="{/codigo}" number="{/valorTotal}" numberUnit="R$">
+				<attributes>
+					<ObjectAttribute text="{i18n>cliente}: {/nomeCliente}"></ObjectAttribute>
+					<ObjectAttribute text="{i18n>vendedor}: {/nomeVendedor}"></ObjectAttribute>
+				</attributes>
+			</ObjectHeader>
+			<List class="sapUiContentPadding" items="{/ItemVenda}">
+				<headerToolbar>
+					<Toolbar >
+						<Title text="{i18n>itensVenda}"></Title>
+					</Toolbar>
+				</headerToolbar>
+				<items>
+					<ObjectListItem title="{descricao}" number="{quantidade} x {valor} = {valorTotal}" numberUnit="R$">
+						<attributes>
+							<ObjectAttribute text="{quantidade}"></ObjectAttribute>
+							<ObjectAttribute text="{medida}"></ObjectAttribute>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

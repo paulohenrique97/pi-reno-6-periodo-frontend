@@ -1,14 +1,16 @@
 {
-  "_version": "1.21.0",
+  "_version": "1.12.0",
   "sap.app": {
-    "id": "br.com.paulopatine.intergratorProject",
+    "id": "br.com.paulopatine.integratorProject",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
       "version": "1.0.0"
     },
     "title": "{{appTitle}}",
-    "description": "{{appDescription}}"
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "ach": "ach"
   },
   "sap.ui": {
     "technology": "UI5",
@@ -28,10 +30,10 @@
   },
   "sap.ui5": {
     "rootView": {
-      "viewName": "br.com.paulopatine.intergratorProject.view.MainView",
+      "viewName": "br.com.paulopatine.integratorProject.view.App",
       "type": "XML",
       "async": true,
-      "id": "idAppControl"
+      "id": "app"
     },
     "dependencies": {
       "minUI5Version": "1.60.0",
@@ -49,7 +51,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "br.com.paulopatine.intergratorProject.i18n.i18n"
+          "bundleName": "br.com.paulopatine.integratorProject.i18n.i18n"
         }
       }
     },
@@ -64,26 +66,101 @@
       "config": {
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
-        "viewPath": "br.com.paulopatine.intergratorProject.view",
-        "controlId": "idAppControl",
+        "viewPath": "br.com.paulopatine.integratorProject.view",
+        "controlId": "app",
         "controlAggregation": "pages",
         "async": true
       },
       "routes": [
         {
-          "name": "RouteMainView",
-          "pattern": "RouteMainView",
-          "target": [
-            "TargetMainView"
-          ]
+          "pattern": "",
+          "name": "home",
+          "target": ["home"]
+        },
+        {
+          "pattern": "clientes",
+          "name": "clientes",
+          "target": ["clientes"]
+        },
+        {
+          "pattern": "vendedores",
+          "name": "vendedores",
+          "target": ["vendedores"]
+        },
+        {
+          "pattern": "fornecedores",
+          "name": "fornecedores",
+          "target": ["fornecedores"]
+        },
+        {
+          "pattern": "produtos",
+          "name": "produtos",
+          "target": ["produtos"]
+        },
+        {
+          "pattern": "vendas",
+          "name": "vendas",
+          "target": ["vendas"]
+        },
+        {
+          "pattern": "venda/{id}",
+          "name": "venda",
+          "target": ["venda"]
+        },
+        {
+          "pattern": "config",
+          "name": "config",
+          "target": ["config"]
         }
       ],
       "targets": {
-        "TargetMainView": {
-          "viewType": "XML",
+        "home": {
+          "viewName": "Home",
+          "viewId": "home",
           "viewLevel": 1,
-          "viewId": "idAppControl",
-          "viewName": "MainView"
+          "title": "{i18n>homeTitle}"
+        },
+        "clientes": {
+          "viewName": "Clientes",
+          "viewId": "clientes",
+          "viewLevel": 1,
+          "title": "{i18n>clientesTitle}"
+        },
+        "vendedores": {
+          "viewName": "Vendedores",
+          "viewId": "vendedores",
+          "viewLevel": 1,
+          "title": "{i18n>vendedoresTitle}"
+        },
+        "fornecedores": {
+          "viewName": "Fornecedores",
+          "viewId": "fornecedores",
+          "viewLevel": 1,
+          "title": "{i18n>fornecedoresTitle}"
+        },
+        "produtos": {
+          "viewName": "Produtos",
+          "viewId": "produtos",
+          "viewLevel": 1,
+          "title": "{i18n>produtosTitle}"
+        },
+        "vendas": {
+          "viewName": "Vendas",
+          "viewId": "vendas",
+          "viewLevel": 1,
+          "title": "{i18n>vendasTitle}"
+        },
+        "venda": {
+          "viewName": "Venda",
+          "viewId": "venda",
+          "viewLevel": 1,
+          "title": "{i18n>vendasTitle}"
+        },
+        "config": {
+          "viewName": "Config",
+          "viewId": "config",
+          "viewLevel": 1,
+          "title": "{i18n>configTitle}"
         }
       }
     }

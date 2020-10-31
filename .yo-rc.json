@@ -1,6 +1,6 @@
 {
   "generator-easy-ui5": {
-    "projectname": "intergratorProject",
+    "projectname": "integratorProject",
     "namespace": "br.com.paulopatine",
     "platform": "Static webserver",
     "viewtype": "XML",
@@ -8,9 +8,7 @@
     "ui5libs": "Content delivery network (OpenUI5)",
     "newdir": true,
     "namespaceURI": "br/com/paulopatine",
-    "uimodules": [
-      "uimodule"
-    ],
+    "uimodules": ["uimodule"],
     "setupCompleted": true
   }
 }

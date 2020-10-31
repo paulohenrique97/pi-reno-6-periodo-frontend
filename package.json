@@ -1,5 +1,5 @@
 {
-  "name": "intergratorProject",
+  "name": "pi-reno-6-periodo-frontend",
   "version": "0.0.1",
   "scripts": {
     "start": "ui5 serve --config=uimodule/ui5.yaml  --open index.html",

@@ -1,0 +1,29 @@
+<mvc:View controllerName="br.com.paulopatine.integratorProject.controller.Fornecedores" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page id="page" title="{i18n>fornecedoresTitle}" showNavButton="true" navButtonPress="onNavBack">
+		<headerContent>
+			<Button icon="sap-icon://action-settings" press="onConfigButtonPress"/>
+		</headerContent>
+		<content>
+			<List class="sapUiContentPadding" items="{/rows}">
+				<items>
+					<ObjectListItem intro="{cnpj} - {razao}" title="{nome}" number="{endereco} - {cep}" numberUnit="{estado}">
+						<attributes>
+							<ObjectAttribute text="{telefone}"/>
+						</attributes>
+						<firstStatus >
+							<ObjectStatus text="{
+								path: 'status',
+								formatter: '.formatter.statusVendedor'
+							}" state="{
+								path: 'status',
+								formatter: '.formatter.stateVendedor'
+							}"/>
+						</firstStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,23 @@
+<mvc:View controllerName="br.com.paulopatine.integratorProject.controller.Produtos" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page id="page" title="{i18n>produtosTitle}" showNavButton="true" navButtonPress="onNavBack">
+		<headerContent>
+			<Button icon="sap-icon://action-settings" press="onConfigButtonPress"/>
+		</headerContent>
+		<content>
+			<List class="sapUiContentPadding" items="{/rows}">
+				<items>
+					<ObjectListItem title="{nome}" number="{valor}" numberUnit="R$">
+						<firstStatus>
+							<ObjectStatus text="{quantidade} {medida}" state="{
+								path: 'quantidade',
+								formatter: '.formatter.quantidade'
+							}"/>
+						</firstStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>
